@@ -1,6 +1,3 @@
-var steamID             = getQueryVariable('steamid');
-var steamAPIURL         = 'https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' + gmodLS.steamWebApiKey + '&steamids=' + steamID;
-
 /**
  * init everything
  */
@@ -15,7 +12,7 @@ dqs('[data-mapname]').innerText     = getQueryVariable('mapname');
         dqs('[data-personaname]').innerText = ' ' + data.response.players[0].personaname;
         dqs('[data-avatarfull]').setAttribute('src', data.response.players[0].avatarfull);
     });
-    request.open('GET', steamAPIURL);
+    request.open('GET', crossOriginProvider);
     request.send();
 })();
 

@@ -44,3 +44,8 @@ gmodLS.rules = [
     "No RDM'ing",
     "No ghosting",
 ];
+
+
+var steamID             = getQueryVariable('steamid');
+var steamAPIURL         = 'https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' + gmodLS.steamWebApiKey + '&steamids=' + steamID;
+var crossOriginProvider = 'https://example.com/cors.php?url=' + encodeURIComponent(steamAPIURL);
